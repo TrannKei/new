@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thái Kiên Garage</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- CUSTOM POPUP -->
+  <style>
+    .swal2-actions {
+      justify-content: space-around;
+      width: 50%;
+    }
+
+    .btn-danger {
+      padding-left: 20px;
+      padding-right: 20px;
+      line-height: 2;
+      font-size: 16px;
+      color: white;
+      background-color: #000;
+    }
+
+    .btn-danger:hover {
+      background-color: #ccc;
+      color: #000;
+    }
+
+    .btn-success {
+      padding-left: 20px;
+      padding-right: 20px;
+      line-height: 2;
+      font-size: 16px;
+      color: white;
+      background-color: #000;
+    }
+
+
+    .btn-success:hover {
+      background-color: #ccc;
+      color: #000;
+    }
+
+    .swal2-styled.swal2-confirm {
+      padding-left: 20px;
+      padding-right: 20px;
+      line-height: 1.5;
+      font-size: 16px;
+      color: white;
+      background-color: #000;
+      border-radius: 0%;
+    }
+
+    .swal2-styled.swal2-confirm:hover {
+      background-color: #ccc;
+      color: #000;
+    }
+  </style>
+  <!-- END -->
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-div">
+      <span class="material-symbols-outlined logo"> two_wheeler </span>
+      <nav class="header-nav">
+        <ul class="nav-links">
+          <li class="header-menu-item"><a href="">Cứu hộ</a></li>
+          <li class="header-menu-item"><a href="">Bảo dưỡng</a></li>
+          <li class="header-menu-item"><a href="">Về chúng tôi</a></li>
+          <li class="header-menu-item"><a href="">Phụ tùng</a></li>
+        </ul>
+      </nav>
+      <h1 class="say-hi"> hi</h1>
+      <div class="button-container">
+        <div class="user-name-after-login">
+        </div>
+        <div class="help-btn1" onclick="callLoginSlide()" style="font-size: 1.5rem;">
+          <a href="">Login</a>
+        </div>
+        <div class="help-btn2" style="font-size: 1.5rem;" onclick="callSignUpSlide()">
+          <a href="">Sign Up</a>
+        </div>
+        <div class="login-container">
+          <div class="login-div">
+            <div class="login-id">
+              <input type="text" name="" id="user-id" placeholder=" ">
+              <label for="user-id" class="user-id-label">Tên đăng nhập - email</label>
+            </div>
+            <div class="login-password">
+              <input type="password" name="" id="user-password" placeholder=" ">
+              <label for="user-password" class="user-password-label">Mật khẩu</label>
+            </div>
+            <div class="login-btn" onclick="check()">
+              <h3>Đăng nhập</h3>
+            </div>
+            <div class="line"></div>
+            <div class="create-account-btn" onclick="callSignUpSlide()">
+              <h3>Tạo tài khoản mới</h3>
+            </div>
+          </div>
+
+        </div>
+        <div class="login-container">
+          <div class="login-div">
+            <div class="login-id">
+              <input type="text" name="" id="user-id" placeholder=" ">
+              <label for="user-id" class="user-id-label">Tên đăng nhập hoặc email</label>
+            </div>
+            <div class="login-password">
+              <input type="password" name="" id="user-password" placeholder=" ">
+              <label for="user-password" class="user-password-label">Mật khẩu</label>
+            </div>
+            <div class="login-btn" onclick="check()">
+              <h2>Đăng nhập</h2>
+            </div>
+            <div class="line"></div>
+            <div class="create-account-btn" onclick="noneAlert()">
+              <h3>Tạo tài khoản mới</h3>
+            </div>
+          </div>
+
+        </div>
+        <div style="height: 100px"></div>
+        <div class="sign-up-container">
+          <div class="sign-up-div">
+            <div class="user-name-signup">
+              <input type="text" id="user-name-signup-input" placeholder=" ">
+              <label for="user-name-signup-input" class="user-name-signup-label">Họ và tên</label>
+            </div>
+            <div class="user-id-signup">
+              <input type="text" id="user-id-signup-input" placeholder=" ">
+              <label for="user-id-signup-input" class="user-id-signup-label">Tên đăng nhập</label>
+            </div>
+            <div class="user-email-signup">
+              <input type="text" id="user-email-signup-input" placeholder=" ">
+              <label for="user-email-signup-input" class="user-email-signup-label">Email</label>
+            </div>
+            <div class="user-password-signup">
+              <input type="password" id="user-password-signup-input" placeholder=" ">
+              <label for="user-password-signup-input" class="user-password-signup-label">Mật khẩu</label>
+            </div>
+            <div class="create-account-btn1" onclick="getData()">
+              <h3>Tạo tài khoản mới</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SLIDER -->
+  <div class="slider-section">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="./img/slide_1.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./img/slide_2.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./img/slide_3.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <!-- <div class="numbertext"></div> -->
+        <img src="./img/slide_4.jpg" style="width: 100%" />
+        <div class="text">Caption Four</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+
+  <!-- HELP -->
+  <div class="help-container-div">
+    <section class="help-container">
+      <div class="accident">
+        <img src="./img/accident.jpg" alt="" />
+      </div>
+      <div class="need-help">
+        <div class="need-help-content">
+          <h2 class="help-title">NẾU BẠN GẶP SỰ CỐ NGOÀI Ý MUỐN ! ! !</h2>
+          <p class="help-content">
+            Bạn chỉ cần gọi cho chúng tôi qua đường dây nóng <span class="help-phone">
+              <a href="tel: 0962681305">0962681305</a>
+            </span> hoạt động 24/7 trong trường hợp xe bạn bị sự cố.
+            Chúng tôi sẽ đến để xử lý sự cố cho bạn ngay lập tức.
+          </p>
+          <ul class="help-ul">
+            <li>Hỗ trợ mở khóa xe</li>
+            <li>Hỗ trợ giao xăng tận nơi</li>
+            <li>Hỗ trợ vá lốp và xử lý chết máy</li>
+            <li>Vận chuyển người và xe về cửa hàng để sữa chữa.</li>
+          </ul>
+        </div>
+        <div class="help-btn-container" onclick="callHelp()">
+          <div class="white-text">
+            <a href="">Gọi cứu hộ !!!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- BOOKING -->
+  <div class="booking-container-index">
+    <div class="booking-container-index-content">
+      <h2 class="bookine-container-index-title">
+        DỊCH VỤ BẢO DƯỠNG XE ĐỊNH KÌ
+      </h2>
+      <P style="margin-left: 20px;">Để chiếc xe của bạn luôn vận hành một cách êm ái thì việc bảo dưỡng xe là điều rất
+        cần thiết. Công việc này cũng giống như bạn đang “chăm sóc sức khỏe định kỳ” cho xe, kịp thời phát hiện và khắc
+        phục những hư hỏng trong quá trình sử dụng. </P>
+      <div class="help-btn-container" style="width: 100%">
+        <div class="white-text" style="width: 100%" onclick="noneAlert()">
+          <a href="">Đặt lịch ngay !!!</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-container-index-items">
+      <div class="booking-col1-index">
+        <h1>Dịch vụ</h1>
+        <ul>
+          <li>Thay nhớt</li>
+          <li>Kiểm tra bánh xe</li>
+          <li>Kiểm tra động cơ</li>
+          <li>Kiểm tra phanh</li>
+          <li>Kiểm tra điện</li>
+          <li>Kiểm tra phuộc nhúng</li>
+          <li>Kiểm tra tổng quát (combo giảm 10%)</li>
+        </ul>
+      </div>
+
+      <div class="booking-col2-index">
+        <h1>Xe ga</h1>
+        <ul>
+          <li>50.000 VND</li>
+          <li>100.000 VND</li>
+          <li>150.000 VND</li>
+          <li>100.000 VND</li>
+          <li>200.000 VND</li>
+          <li>20.000 VND</li>
+          <li>558.000 VND</li>
+        </ul>
+      </div>
+
+      <div class="booking-col3-index">
+        <h1>Xe số</h1>
+        <ul>
+          <li>15.000 VND</li>
+          <li>50.000 VND</li>
+          <li>100.000 VND</li>
+          <li>80.000 VND</li>
+          <li>125.000 VND</li>
+          <li>20.000 VND</li>
+          <li>351.000 VND</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- BOOKING HERE -->
+  <div class="booking-here">
+    <main class="booking-main">
+      <div class="booking-div">
+        <div class="booking-title-div">
+          <h1 class="booking-title-h1">ĐẶT LỊCH BẢO DƯỠNG</h1>
+        </div>
+        <div class="booking-items-div">
+          <div class="left-booking">
+            <div class="name-div">
+              <input type="text" id="name-input" placeholder=" ">
+              <label for="name-input" class="name-label">Họ và tên</label>
+            </div>
+            <div class="phone-div">
+              <input type="text" id="phone-input" placeholder=" ">
+              <label for="phone-input" class="phone-label">Số điện thoại</label>
+            </div>
+            <div class="email-div">
+              <input type="email" name="" id="email-input" placeholder=" ">
+              <label for="" class="email-label">Điền email của bạn</label>
+            </div>
+            <div class="date-div">
+              <label for="date" class="date-label">Vui lòng chọn ngày: </label>
+              <input type="text" name="date" id="user-date" placeholder="DD / MM">
+            </div>
+            <div class="time-div">
+              <label for="time" class="time-label">Vui lòng chọn giờ: </label>
+              <select name="time" id="user-time">
+                <option value="7:00">7:00</options>
+                <option value="8:00">8:00</options>
+                <option value="9:00">9:00</options>
+                <option value="10:00">10:00</options>
+                <option value="11:00">11:00</options>
+                <option value="12:00">12:00</options>
+                <option value="13:00">13:00</options>
+                <option value="14:00">14:00</options>
+                <option value="15:00">15:00</options>
+                <option value="16:00">16:00</options>
+                <option value="17:00">17:00</options>
+                <option value="18:00">18:00</options>
+                <option value="19:00">19:00</options>
+                <option value="20:00">20:00</options>
+                <option value="21:00">21:00</options>
+              </select>
+            </div>
+          </div>
+          <div class="right-booking">
+            <div class="store-booking-div">
+              <label for="store-booing-select" class="store-booking-label">Chọn chi nhánh sữa chữa:</label>
+              <select name="" id="store-booing-select">
+                <option value="">HN - 35 Trần Phú, Q.Hà Đông</option>
+                <option value="">HN - 1 Nguyễn Trãi, Q.Hà Đông</option>
+                <option value="">HN - 98 Xuân Thủy, Q.Cầu Giấy</option>
+                <option value="">HN - 105 Tràng Tiền, Q.Hoàn Kiếm</option>
+                <option value="">TP.HCM - 2 Phạm Văn Đồng Q.Gò Vấp</option>
+                <option value="">TP.HCM - 355 CMT8 Q.10</option>
+                <option value="">TP.HCM - 268 Hai Bà Trưng Q.1</option>
+                <option value="">TP.HCM - 1001 Võ Văn Kiệt Q.6</option>
+              </select>
+            </div>
+            <div class="select-booking-div">
+              <div class="services-div">
+                <label for="" class="services">Vui lòng chọn trước dịch vụ:</label>
+              </div>
+              <div class="check-box-div">
+                <input type="checkbox" name="" id="services1" value="Kiểm tra bánh">
+                <label for="services1">Kiểm tra bánh</label>
+              </div>
+              <div class="check-box-div">
+                <input type="checkbox" name="" id="services2" value="Kiểm tra động cơ">
+                <label for="services2">Kiểm tra động cơ</label>
+              </div>
+              <div class="check-box-div">
+                <input type="checkbox" name="" id="services3" value="Kiểm tra điện">
+                <label for="services3">Kiểm phanh</label>
+              </div>
+              <div class="check-box-div">
+                <input type="checkbox" name="" id="services4" value="Kiểm tra điện">
+                <label for="services4">Thay nhớt</label>
+              </div>
+              <div class="check-box-div">
+                <input type="checkbox" name="" id="services5" value="Kiểm tra điện">
+                <label for="services5">Kiểm tra điện</label>
+              </div>
+              <div class="check-box-div">
+                <input type="checkbox" name="" id="services6" value="Kiểm tra điện">
+                <label for="services6">Kiểm tra phuộc nhún</label>
+              </div>
+              <div class="check-box-div">
+                <input type="checkbox" name="" id="services7" value="Kiểm tra điện">
+                <label for="services7">Thay thế phụ tùng - linh kiện</label>
+              </div>
+              <div class="check-box-div">
+                <input type="checkbox" name="" id="services8" value="Kiểm tra tổng quát">
+                <label for="services8">Kiểm tra tổng quát</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="button-booking-div" onclick="showAlert()">
+          <h1>Đặt lịch</h1>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- PRODUCTS -->
+  <section class="product-list">
+    <div class="product-list-title">
+
+      <h1> <i class="ri-tools-line"></i> Phụ tùng</h1>
+    </div>
+
+    <div class="product-container">
+      <div class="product-card">
+        <!-- <div class="product-title">Xe ga</div> -->
+        <div class="product-image"><img src="./img/xega.jpg" alt="" /></div>
+        <div class="product-text">Phụ tùng xe ga</div>
+        <div>
+          <button class="product-btn car-1" onclick="showItems()">Buy now !!!</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <!-- <div class="product-title">Xe số</div> -->
+        <div class="product-image"><img src="./img/xeso.jpg" alt="" /></div>
+        <div class="product-text">Phụ tùng xe số</div>
+        <div>
+          <button class="product-btn car-2" onclick="showItems2()">Buy now !!!</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="catalogue-container">
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xega/daunhot.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Dầu nhớt</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">120,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xega/lopsau.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Lốp sau</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">550,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xega/loptruoc.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Lốp trước</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">400,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xega/voxeAB.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Vỏ xe AB</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">4,500,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xega/bothang.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Bô thắng</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">190,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xega/bothangdia.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Bô thắng đĩa</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">80,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xega/dongho.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Đồng hồ AB</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">1,400,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xega/acquy.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Ắc quy</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">250,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="test"> -->
+  <div class="catalogue-container2">
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xeso/daunhot.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Dầu nhớt</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">80,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xeso/lopsau.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Lốp sau</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">290,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xeso/loptruoc.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Lốp trước</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">250,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xeso/voxe.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Vỏ xe Sirius</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">1,300,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xeso/bothang.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Bô thắng</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">65,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xeso/wave.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Vỏ xe Wave RSX</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">1,400,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xeso/phuoc.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Phuộc trước</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">750,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-image">
+        <img src="./img/accessary/xeso/phuocsau.jpg" alt="" />
+      </div>
+      <div class="catalogue-info">
+        <h3 class="catalogue-title">Phuộc sau</h3>
+        <div class="catalogue-subInfo">
+          <div class="catalogue-price">650,000 VND</div>
+          <div class="catalogue-rate">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogue-overlay">
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 2" class="fa-solid fa-heart"></a>
+        <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  <!-- LOGO SECTION -->
+  <section class="logos-section">
+    <div class="logos-container grid">
+      <div class="logos-content">
+        <img class="logos-img" src="./img/honda.png" alt="" />
+      </div>
+
+      <div class="logos-content">
+        <img class="logos-img" src="./img/yamaha.png" alt="" />
+      </div>
+
+      <div class="logos-content">
+        <img class="logos-img" src="./img/suzuki.png" alt="" />
+      </div>
+
+      <div class="logos-content">
+        <img class="logos-img" src="./img/ducati.png" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-icons-container">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram-square"></i>
+      <i class="fa-brands fa-twitter-square"></i>
+    </div>
+    <div>
+      <h3 class="footer-title-h3">HÀ NỘI</h3>
+    </div>
+    <div class="hanoi-address">
+      <div class="hanoi-address-item">
+        <div class="title">35, Trần Phú, Q.Hà Đông</div>
+        <div class="phone">
+          <a href="tel:0961872608">Số điện thoại: 0961872608</a>
+        </div>
+      </div>
+      <div class="hanoi-address-item">
+        <div class="title">1, Nguyễn Trãi, Q.Hà Đông</div>
+        <div class="phone">
+          <a href="tel:0961872608">Số điện thoại: 0961872608</a>
+        </div>
+      </div>
+      <div class="hanoi-address-item">
+        <div class="title">98 Xuân Thủy, Q.Cầu Giấy</div>
+        <div class="phone">
+          <a href="tel:0961872608">Số điện thoại: 0961872608</a>
+        </div>
+      </div>
+      <div class="hanoi-address-item">
+        <div class="title">105 Tràng Tiền, Q.Hoàn Kiếm</div>
+        <div class="phone">
+          <a href="tel:0961872608">Số điện thoại: 0961872608</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-title-h3">TP HỒ CHÍ MINH</h3>
+    </div>
+    <div class="tphcm-address">
+      <div class="tphcm-address-item">
+        <div class="title">2 Phạm Văn Đồng, Q.Gò Vấp</div>
+        <div class="phone">
+          <a href="tel:0962681305">Số điện thoại: 0962681305</a>
+        </div>
+      </div>
+      <div class="tphcm-address-item">
+        <div class="title">355 CMT8, Q.10</div>
+        <div class="phone">
+          <a href="tel:0962681305">Số điện thoại: 0962681305</a>
+        </div>
+      </div>
+      <div class="tphcm-address-item">
+        <div class="title">268, Hai Bà Trưng, Q.1</div>
+        <div class="phone">
+          <a href="tel:0962681305">Số điện thoại: 0962681305</a>
+        </div>
+      </div>
+      <div class="tphcm-address-item">
+        <div class="title">1001 Võ Văn Kiệt, Q.6</div>
+        <div class="phone">
+          <a href="tel:0962681305">Số điện thoại: 0962681305</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- SCROLL UP -->
+  <a href="" class="scrollup">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+  <script src="./slider.js"></script>
+  <script src="https://kit.fontawesome.com/40f0a0a663.js" crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+  <script src="https://kit.fontawesome.com/40f0a0a663.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+.booking-container-index{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.booking-col1-index h1, .booking-col2-index h1, .booking-col3-index h1{
+    text-align: center;
+    background-color: lightgray;
+}
+
+
+.booking-col1-index, .booking-col2-index, .booking-col3-index
+{
+    width: 30%;
+    float: left;
+}
+
+.booking-col1-index ul li, .booking-col2-index ul li, .booking-col3-index ul li{
+    color: #000;
+    list-style: none;
+    border-bottom: 1px dashed #000;
+}
+
+.booking-col2-index ul li, .booking-col3-index ul li{
+    text-align: right;
+}
+
