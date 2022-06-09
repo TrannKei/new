@@ -41,9 +41,10 @@ function showAlert() {
 
     title: `Cảm ơn quý khách hàng ${bookingName.value.toUpperCase()} với số điện thoại ${bookingPhone.value} đã đặt lịch vào lúc ${bookingTime.value} ngày ${bookingDate.value}. \n Quý khách vui lòng đến đúng giờ để nhận được những dịch vụ tốt nhất!`,
     showConfirmButton: false,
-    timer: 5000
-
+    timer: 5000,
+    // showBookingTab.style.display = "none"
   });
+  showBookingTab.style.display = "none"
 }
 
 const showBookingTab = document.querySelector(".booking-here");
@@ -61,63 +62,6 @@ function noneAlert() {
 
 
 
-let userData = [
-  {
-    userName: "admin",
-    id: "admin",
-    password: "admin",
-    email: "admin@gmail.com",
-  },
-  {
-    userName: "Tran Kien",
-    id: "trankien",
-    password: "trankien",
-    email: "trankien@gmail.com",
-  },
-  {
-    userName: "Thanh Thai",
-    id: "thanhthai",
-    password: "thanhthai",
-    email: "thanhthai@gmail.com",
-  },
-  {
-    userName: "Quang Trung",
-    id: "quangtrung",
-    password: "quangtrung",
-    email: "quangtrung@gmail.com",
-  },
-
-]
-function loginAlert() {
-  Swal.fire({
-    icon: 'success',
-    timer: 1000,
-  }
-
-  )
-}
-
-const userNameSignUpInput = document.querySelector(".user-name-signup-input")
-const userIdSignUpInput = document.querySelector(".user-id-signup-input")
-const userEmailSignUpInput = document.querySelector(".user-email-signup-input")
-const userPasswordSignUpInput = document.querySelector(".user-password-signup-input")
-
-let userDataFake = {
-    nameUser: "",
-    id: "",
-    password: "",
-    email: "",
-}
-
-function getData(){
-  userDataFake.nameUser.push(userNameSignUpInput.value);
-  userDataFake.id.push(userIdSignUpInput.value);
-  userDataFake.password.push(userPasswordSignUpInput.value);
-  userDataFake.email.push(userEmailSignUpInput.value);
-}
-
-userData.push(userDataFake);
-console.log(userData);
 
 
 
@@ -158,48 +102,6 @@ function callSignUpSlide() {
 
 
 
-
-
-
-function loginAlert() {
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    showConfirmButton: false,
-    timer: 2000,
-  }
-
-  )
-}
-
-function failAlert() {
-  Swal.fire({
-    position: 'top-end',
-    icon: 'error',
-    title: 'Sai tên đăng nhập hoặc mật khẩu',
-    showConfirmButton: false,
-    timer: 2000,
-  }
-
-  )
-}
-
-
-
-function check() {
-  for (let i = 0; i <= userData.length; i++) {
-
-    if ((userData[i].id == userIdInput.value || userData[i].email == userIdInput.value) && userData[i].password === userPasswordInput.value) {
-
-      loginSlide.style.display = "none"
-      hideBtnLoginSignUp.style.display = "none"
-      hiUser.style.display = "block"
-      hiUser.innerText = `Xin chào ${userData[i].userName}!`
-      loginAlert();
-      break;
-    }else failAlert()
-  }
-}
 
 const car1 = document.querySelector(".car-1");
 const car2 = document.querySelector(".car-2");
@@ -293,7 +195,15 @@ function callHelp() {
 }
 
 
+// get nav bar
 
+const getUl = document.querySelector(".header-nav")
+function getNav()
+{
+    if(getUl.style.display !== "none")
+     getUl.style.display = "none"
+    else getUl.style.display = "block"
+}
 
 
 

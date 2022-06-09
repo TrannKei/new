@@ -73,87 +73,76 @@
   <!-- HEADER -->
   <header>
     <div class="header-div">
+      <div class="header-hambuger" onclick="getNav()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
       <span class="material-symbols-outlined logo"> two_wheeler </span>
       <nav class="header-nav">
         <ul class="nav-links">
-          <li class="header-menu-item"><a href="">Cứu hộ</a></li>
-          <li class="header-menu-item"><a href="">Bảo dưỡng</a></li>
-          <li class="header-menu-item"><a href="">Về chúng tôi</a></li>
-          <li class="header-menu-item"><a href="">Phụ tùng</a></li>
+          <li class="header-menu-item"><a href="#help">Cứu hộ</a></li>
+          <li class="header-menu-item"><a href="#booking">Bảo dưỡng</a></li>
+          <li class="header-menu-item"><a href="#products">Phụ tùng</a></li>
+          <li class="header-menu-item"><a href="#about-us">Về chúng tôi</a></li>
         </ul>
       </nav>
       <h1 class="say-hi"> hi</h1>
+      <div class="small-icon-login" onclick="callLoginSlide()">
+        <i class="fa-solid fa-user"></i>
+
+      </div>
       <div class="button-container">
         <div class="user-name-after-login">
         </div>
         <div class="help-btn1" onclick="callLoginSlide()" style="font-size: 1.5rem;">
-          <a href="">Login</a>
+          <a>Login</a>
         </div>
         <div class="help-btn2" style="font-size: 1.5rem;" onclick="callSignUpSlide()">
-          <a href="">Sign Up</a>
+          <a>Sign Up</a>
         </div>
-        <div class="login-container">
-          <div class="login-div">
-            <div class="login-id">
-              <input type="text" name="" id="user-id" placeholder=" ">
-              <label for="user-id" class="user-id-label">Tên đăng nhập - email</label>
-            </div>
-            <div class="login-password">
-              <input type="password" name="" id="user-password" placeholder=" ">
-              <label for="user-password" class="user-password-label">Mật khẩu</label>
-            </div>
-            <div class="login-btn" onclick="check()">
-              <h3>Đăng nhập</h3>
-            </div>
-            <div class="line"></div>
-            <div class="create-account-btn" onclick="callSignUpSlide()">
-              <h3>Tạo tài khoản mới</h3>
-            </div>
-          </div>
 
-        </div>
-        <div class="login-container">
-          <div class="login-div">
-            <div class="login-id">
-              <input type="text" name="" id="user-id" placeholder=" ">
-              <label for="user-id" class="user-id-label">Tên đăng nhập hoặc email</label>
-            </div>
-            <div class="login-password">
-              <input type="password" name="" id="user-password" placeholder=" ">
-              <label for="user-password" class="user-password-label">Mật khẩu</label>
-            </div>
-            <div class="login-btn" onclick="check()">
-              <h2>Đăng nhập</h2>
-            </div>
-            <div class="line"></div>
-            <div class="create-account-btn" onclick="noneAlert()">
-              <h3>Tạo tài khoản mới</h3>
-            </div>
+      </div>
+      <div class="login-container">
+        <div class="login-div">
+          <div class="login-id">
+            <input type="text" name="" id="user-id" placeholder=" ">
+            <label for="user-id" class="user-id-label">Tên đăng nhập - email</label>
           </div>
-
+          <div class="login-password">
+            <input type="password" name="" id="user-password" placeholder=" ">
+            <label for="user-password" class="user-password-label">Mật khẩu</label>
+          </div>
+          <div class="login-btn" onclick="check()">
+            <h3>Đăng nhập</h3>
+          </div>
+          <div class="line"></div>
+          <div class="create-account-btn" onclick="callSignUpSlide()">
+            <h3>Tạo tài khoản mới</h3>
+          </div>
         </div>
-        <div style="height: 100px"></div>
-        <div class="sign-up-container">
-          <div class="sign-up-div">
-            <div class="user-name-signup">
-              <input type="text" id="user-name-signup-input" placeholder=" ">
-              <label for="user-name-signup-input" class="user-name-signup-label">Họ và tên</label>
-            </div>
-            <div class="user-id-signup">
-              <input type="text" id="user-id-signup-input" placeholder=" ">
-              <label for="user-id-signup-input" class="user-id-signup-label">Tên đăng nhập</label>
-            </div>
-            <div class="user-email-signup">
-              <input type="text" id="user-email-signup-input" placeholder=" ">
-              <label for="user-email-signup-input" class="user-email-signup-label">Email</label>
-            </div>
-            <div class="user-password-signup">
-              <input type="password" id="user-password-signup-input" placeholder=" ">
-              <label for="user-password-signup-input" class="user-password-signup-label">Mật khẩu</label>
-            </div>
-            <div class="create-account-btn1" onclick="getData()">
-              <h3>Tạo tài khoản mới</h3>
-            </div>
+
+      </div>
+
+
+      <div data-aos="fade-down" class="sign-up-container">
+        <div class="sign-up-div">
+          <div class="user-name-signup">
+            <input type="text" id="user-name-signup-input" placeholder=" ">
+            <label for="user-name-signup-input" class="user-name-signup-label">Họ và tên</label>
+          </div>
+          <div class="user-id-signup">
+            <input type="text" id="user-id-signup-input" placeholder=" ">
+            <label for="user-id-signup-input" class="user-id-signup-label">Tên đăng nhập</label>
+          </div>
+          <div class="user-email-signup">
+            <input type="text" id="user-email-signup-input" placeholder=" ">
+            <label for="user-email-signup-input" class="user-email-signup-label">Email</label>
+          </div>
+          <div class="user-password-signup">
+            <input type="password" id="user-password-signup-input" placeholder=" ">
+            <label for="user-password-signup-input" class="user-password-signup-label">Mật khẩu</label>
+          </div>
+          <div class="create-account-btn1" onclick="signup()">
+            <h3>Tạo tài khoản mới</h3>
           </div>
         </div>
       </div>
@@ -194,7 +183,7 @@
   </div>
 
   <!-- HELP -->
-  <div class="help-container-div">
+  <div data-aos="fade-up" class="help-container-div" id="help">
     <section class="help-container">
       <div class="accident">
         <img src="./img/accident.jpg" alt="" />
@@ -217,7 +206,7 @@
         </div>
         <div class="help-btn-container" onclick="callHelp()">
           <div class="white-text">
-            <a href="">Gọi cứu hộ !!!</a>
+            <a>Gọi cứu hộ !!!</a>
           </div>
         </div>
       </div>
@@ -225,7 +214,7 @@
   </div>
 
   <!-- BOOKING -->
-  <div class="booking-container-index">
+  <div data-aos="fade-up" class="booking-container-index" id="booking">
     <div class="booking-container-index-content">
       <h2 class="bookine-container-index-title">
         DỊCH VỤ BẢO DƯỠNG XE ĐỊNH KÌ
@@ -235,7 +224,7 @@
         phục những hư hỏng trong quá trình sử dụng. </P>
       <div class="help-btn-container" style="width: 100%">
         <div class="white-text" style="width: 100%" onclick="noneAlert()">
-          <a href="">Đặt lịch ngay !!!</a>
+          <a>Đặt lịch ngay !!!</a>
         </div>
       </div>
     </div>
@@ -250,7 +239,7 @@
           <li>Kiểm tra phanh</li>
           <li>Kiểm tra điện</li>
           <li>Kiểm tra phuộc nhúng</li>
-          <li>Kiểm tra tổng quát (combo giảm 10%)</li>
+          <li>Kiểm tra tổng quát </li>
         </ul>
       </div>
 
@@ -282,7 +271,7 @@
     </div>
   </div>
   <!-- BOOKING HERE -->
-  <div class="booking-here">
+  <div data-aos="fade-down" class="booking-here">
     <main class="booking-main">
       <div class="booking-div">
         <div class="booking-title-div">
@@ -329,7 +318,7 @@
           </div>
           <div class="right-booking">
             <div class="store-booking-div">
-              <label for="store-booing-select" class="store-booking-label">Chọn chi nhánh sữa chữa:</label>
+              <label for="store-booking-select" class="store-booking-label">Chọn chi nhánh sữa chữa:</label>
               <select name="" id="store-booing-select">
                 <option value="">HN - 35 Trần Phú, Q.Hà Đông</option>
                 <option value="">HN - 1 Nguyễn Trãi, Q.Hà Đông</option>
@@ -388,7 +377,7 @@
     </main>
   </div>
   <!-- PRODUCTS -->
-  <section class="product-list">
+  <section data-aos="fade-up" class="product-list" id="products">
     <div class="product-list-title">
 
       <h1> <i class="ri-tools-line"></i> Phụ tùng</h1>
@@ -414,7 +403,7 @@
       </div>
     </div>
   </section>
-  <div class="catalogue-container">
+  <div data-aos="fade-down" class="catalogue-container">
     <div class="catalogue">
       <div class="catalogue-image">
         <img src="./img/accessary/xega/daunhot.jpg" alt="" />
@@ -422,7 +411,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Dầu nhớt</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">120,000 VND</div>
+          <div class="catalogue-price"><span>120.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -434,7 +423,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" id="click-to-count" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -447,7 +436,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Lốp sau</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">550,000 VND</div>
+          <div class="catalogue-price"><span>550.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -459,7 +448,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -472,7 +461,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Lốp trước</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">400,000 VND</div>
+          <div class="catalogue-price"><span>400.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -484,7 +473,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -497,7 +486,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Vỏ xe AB</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">4,500,000 VND</div>
+          <div class="catalogue-price"><span>4.500.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -509,7 +498,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -522,7 +511,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Bô thắng</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">190,000 VND</div>
+          <div class="catalogue-price"><span>190.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -534,7 +523,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -547,7 +536,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Bô thắng đĩa</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">80,000 VND</div>
+          <div class="catalogue-price"><span>80.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -559,7 +548,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -572,7 +561,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Đồng hồ AB</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">1,400,000 VND</div>
+          <div class="catalogue-price"><span>1.400.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -584,7 +573,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -597,7 +586,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Ắc quy</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">250,000 VND</div>
+          <div class="catalogue-price"><span>250.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -609,14 +598,14 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
     </div>
   </div>
   <!-- <div class="test"> -->
-  <div class="catalogue-container2">
+  <div data-aos="fade-down" class="catalogue-container2">
     <div class="catalogue">
       <div class="catalogue-image">
         <img src="./img/accessary/xeso/daunhot.jpg" alt="" />
@@ -624,7 +613,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Dầu nhớt</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">80,000 VND</div>
+          <div class="catalogue-price"><span value="80000">80.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -636,7 +625,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -649,7 +638,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Lốp sau</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">290,000 VND</div>
+          <div class="catalogue-price"><span>290.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -661,7 +650,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -674,7 +663,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Lốp trước</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">250,000 VND</div>
+          <div class="catalogue-price"><span>250.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -686,7 +675,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -699,7 +688,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Vỏ xe Sirius</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">1,300,000 VND</div>
+          <div class="catalogue-price"><span>1.300.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -711,7 +700,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -724,7 +713,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Bô thắng</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">65,000 VND</div>
+          <div class="catalogue-price"><span>65.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -736,7 +725,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -749,7 +738,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Vỏ xe Wave RSX</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">1,400,000 VND</div>
+          <div class="catalogue-price"><span>1.400.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -761,7 +750,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -774,7 +763,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Phuộc trước</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">750,000 VND</div>
+          <div class="catalogue-price"><span>750.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -786,7 +775,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -799,7 +788,7 @@
       <div class="catalogue-info">
         <h3 class="catalogue-title">Phuộc sau</h3>
         <div class="catalogue-subInfo">
-          <div class="catalogue-price">650,000 VND</div>
+          <div class="catalogue-price"><span>650.000</span> VND</div>
           <div class="catalogue-rate">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -811,7 +800,7 @@
       </div>
 
       <div class="catalogue-overlay">
-        <a style="--i: 1" class="fa-solid fa-cart-arrow-down"></a>
+        <a style="--i: 1" class="fa-solid fa-cart-arrow-down" onclick="count(this)"></a>
         <a style="--i: 2" class="fa-solid fa-heart"></a>
         <a style="--i: 3" class="fa-solid fa-magnifying-glass"></a>
       </div>
@@ -840,36 +829,64 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-icons-container">
+  <footer class="footer" id="about-us">
+
+    <div class="footer-title">
+      <h1 class="form-title">Liên hệ với chúng tôi</h1>
+      <div class="input-icon">
+        <div class="search">
+          <form action="">
+            <input type="text" placeholder="Số điện thoại...">
+            <input type="submit" value="Gửi">
+          </form>
+        </div>
+        <div class="footer-icons-container">
+          <i style="background-color: #0b85ed; padding: 10px 15px;" class="fa-brands fa-facebook-f"></i>
+          <i style="background: rgb(244,184,72);
+            background: linear-gradient(6deg, rgba(244,184,72,1) 0%, rgba(205,53,91,1) 60%, rgba(60,61,229,1) 100%);
+            " class="fa-brands fa-instagram"></i>
+          <i style="background-color: #fff; color: #1c9bf0;" class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="footer-icons-container">
       <i class="fa-brands fa-facebook"></i>
       <i class="fa-brands fa-instagram-square"></i>
       <i class="fa-brands fa-twitter-square"></i>
-    </div>
+    </div> -->
     <div>
       <h3 class="footer-title-h3">HÀ NỘI</h3>
     </div>
     <div class="hanoi-address">
       <div class="hanoi-address-item">
-        <div class="title">35, Trần Phú, Q.Hà Đông</div>
+        <div class="title">
+          <a href="https://bit.ly/3NnLZIY" target="_blank">35 Trần Phú, Q.Hà Đông</a>
+        </div>
         <div class="phone">
           <a href="tel:0961872608">Số điện thoại: 0961872608</a>
         </div>
       </div>
       <div class="hanoi-address-item">
-        <div class="title">1, Nguyễn Trãi, Q.Hà Đông</div>
+        <div class="title">
+          <a href="https://bit.ly/3Q0bzpb" target="_blank">1 Nguyễn Trãi, Q.Hà Đông</a>
+        </div>
         <div class="phone">
           <a href="tel:0961872608">Số điện thoại: 0961872608</a>
         </div>
       </div>
       <div class="hanoi-address-item">
-        <div class="title">98 Xuân Thủy, Q.Cầu Giấy</div>
+        <div class="title">
+          <a href="https://bit.ly/3aoTNeS" target="_blank">98 Xuân Thủy, Q.Cầu Giấy</a>
+        </div>
         <div class="phone">
           <a href="tel:0961872608">Số điện thoại: 0961872608</a>
         </div>
       </div>
       <div class="hanoi-address-item">
-        <div class="title">105 Tràng Tiền, Q.Hoàn Kiếm</div>
+        <div class="title">
+          <a href="https://bit.ly/3GP28EM" target="_blank">105 Tràng Tiền, Q.Hoàn Kiếm</a>
+        </div>
         <div class="phone">
           <a href="tel:0961872608">Số điện thoại: 0961872608</a>
         </div>
@@ -880,31 +897,61 @@
     </div>
     <div class="tphcm-address">
       <div class="tphcm-address-item">
-        <div class="title">2 Phạm Văn Đồng, Q.Gò Vấp</div>
+        <div class="title">
+          <a href="https://bit.ly/398mOv8" target="_blank">2 Phạm Văn Đồng, Q.Gò Vấp</a>
+        </div>
         <div class="phone">
           <a href="tel:0962681305">Số điện thoại: 0962681305</a>
         </div>
       </div>
       <div class="tphcm-address-item">
-        <div class="title">355 CMT8, Q.10</div>
+        <div class="title">
+          <a href="https://bit.ly/3NTDghz" target="_blank">355 Cách mạng tháng 8, Q.10</a>
+        </div>
         <div class="phone">
           <a href="tel:0962681305">Số điện thoại: 0962681305</a>
         </div>
       </div>
       <div class="tphcm-address-item">
-        <div class="title">268, Hai Bà Trưng, Q.1</div>
+        <div class="title" target="_blank">
+          <a href="https://bit.ly/3teUUEB" target="_blank"> 268 Hai Bà Trưng, Q.1</a>
+        </div>
         <div class="phone">
           <a href="tel:0962681305">Số điện thoại: 0962681305</a>
         </div>
       </div>
       <div class="tphcm-address-item">
-        <div class="title">1001 Võ Văn Kiệt, Q.6</div>
+        <div class="title">
+          <a href="https://bit.ly/3tbqvqE" target="_blank">1001 Võ Văn Kiệt, Q.6</a>
+        </div>
         <div class="phone">
           <a href="tel:0962681305">Số điện thoại: 0962681305</a>
         </div>
       </div>
     </div>
   </footer>
+  <!-- CART -->
+  <div class="cart-icon" >
+    <span class="material-symbols-outlined" onclick="showCart()">
+      shopping_cart
+    </span>
+    <div class="cart-num">0</div>
+    <div class="row mb" id="cart-container">
+      <h1 style="padding-top: 10px;">GIỎ HÀNG</h1>
+      <table>
+        <tr>
+          <th>STT</th>
+          <th>Sản phẩm</th>
+          <th>Tên sản phẩm</th>
+          <th>Đơn giá</th>
+          <th>Xóa</th>
+        </tr>
+        <tbody id="mycart">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
   <!-- SCROLL UP -->
   <a href="" class="scrollup">
     <i class="fa-solid fa-arrow-up"></i>
